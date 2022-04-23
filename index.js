@@ -2,9 +2,22 @@ const PORT = 8080;
 const express = require('express');
 const axios = require('axios');
 const cheerio = require('cheerio');
-const { RssHandler } = require('htmlparser2');
-
 const app = express();
+
+const newspapers = [
+    {
+        name: 'thetimes',
+        address: 'https://www.thetimes.co.uk/environment/climate-change',
+    },
+    {
+        name: 'guardian',
+        address: 'https://www.theguardian.com/environment/climate-crisic',
+    },
+    {
+        name: 'telegraph',
+        address: 'https://www.telegraph.co.uk/climate-change',
+    },
+];
 
 const articles = [];
 
